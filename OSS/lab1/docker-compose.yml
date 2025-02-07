@@ -1,14 +1,11 @@
-# NGINX OSS webserver with tools
-# NGINX Basics, Jan 2024
-# Chris Akker, Shouvik Dutta
 version: '3.3'
 services:
   nginx-oss:                  # NGINX OSS Webserver
-    hostname: nginx-oss
-    container_name: nginx-oss
-    build: nginx-oss          # Build new container, using /nginx-oss/Dockerfile
+    hostname: indra-nginx-oss
+    container_name: indra-nginx-oss
+    build: indra-nginx-oss          # Build new container, using /nginx-oss/Dockerfile
     volumes:
-        - ./nginx-oss/etc/nginx/conf.d/stub_status.conf:/etc/nginx/conf.d/stub_status.conf            # Copy this file to container
+        - ./indra-nginx-oss/etc/nginx/conf.d/stub_status.conf:/etc/nginx/conf.d/stub_status.conf            # Copy this file to container
     ports:
         - 80:80       # Open for HTTP
         - 443:443     # Open for HTTPS
