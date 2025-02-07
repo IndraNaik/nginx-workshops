@@ -3,9 +3,9 @@ services:
   nginx-oss:                  # NGINX OSS Webserver
     hostname: indra-nginx-oss
     container_name: indra-nginx-oss
-    build: indra-nginx-oss          # Build new container, using /nginx-oss/Dockerfile
+    build: nginx-oss          # Build new container, using /nginx-oss/Dockerfile
     volumes:
-        - ./nginx-oss/etc/nginx/conf.d/stub_status.conf:/etc/nginx/conf.d/stub_status.conf            # Copy this file to container
+        - ./indra-nginx-oss/etc/nginx/conf.d/stub_status.conf:/etc/nginx/conf.d/stub_status.conf            # Copy this file to container
     ports:
         - 80:80       # Open for HTTP
         - 443:443     # Open for HTTPS
